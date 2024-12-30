@@ -1,0 +1,21 @@
+# HR Page
+
+This project uses Bootstrap 5 for the frontend design.
+
+## Setup Instructions
+
+1. **Change API Endpoint for Email.js**:
+    Update the API endpoint in your Email.js configuration to point to your desired endpoint.
+
+2. **Configure Backend Environment File**:
+    Fill in the backend `.env` file with the following details:
+    - `EMAIL`: Your email address
+    - `PASSWORD`: Your email password
+
+3. **Enable Less Secure Apps**:
+    Ensure that the email account you are using has the "Less secure app access" setting turned on. This can be found in your email account's security settings.
+
+Follow these instructions to properly configure the project
+
+
+by bilal korchii
