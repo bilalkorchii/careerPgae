@@ -241,7 +241,6 @@
               JOIN the<br />
               <span class="dream-text">DREAM TEAM</span>
             </div>
-
             <form id="form" enctype="multipart/form-data" novalidate>
               <div class="row w-full mb-3">
                 <div class="col-md-6 w-full">
@@ -278,7 +277,7 @@
                     </div>
                   </div>
                   <div class="text-description text-light">
-                    <p class="font-semibold mt-2 hideerror unvalidjob">
+                    <p class="font-semibold mt-2 hide-error-form unvalidjob">
                       Please provide a Job title.
                     </p>
                   </div>
@@ -291,7 +290,7 @@
                   placeholder="Your name"
                 />
                 <div class="text-description text-light">
-                  <p class="font-semibold mt-2 hideerror unvalidname">
+                  <p class="font-semibold mt-2 hide-error-form unvalidname">
                     Please provide a name.
                   </p>
                 </div>
@@ -304,7 +303,7 @@
                   placeholder="E-mail"
                 />
                 <div class="text-description text-light">
-                  <p class="font-semibold mt-2 hideerror unvalidemail">
+                  <p class="font-semibold mt-2 hide-error-form unvalidemail">
                     Please provide a email.
                   </p>
                 </div>
@@ -329,7 +328,7 @@
               </div>
 
               <div class="text-description h-3 text-light">
-                <p class="font-semibold mt-2 hideerror unvalidcv">
+                <p class="font-semibold mt-2 hide-error-form unvalidcv">
                   Please provide a cv.
                 </p>
               </div>
@@ -343,14 +342,14 @@
               >
                 <div class="spinner-border loading" role="status"></div>
 
-                <span class="spansend">SEND</span>
+                <span class="btn-form-send">SEND</span>
                 <img
                   class="iconsend"
                   src="./assets/svg-assets-careerpage/send-arrow.svg"
                   alt="Send Arrow"
                 />
               </button>
-              <div class="alert hideerror fade-in" role="alert">
+              <div class="alert hide-error-form " role="alert">
                 <h4 class="form-title">Well done!</h4>
                 <p>
                   Thank you for submitting your application. We will review your
@@ -359,7 +358,7 @@
               </div>
 
               <div
-                class="alerterror text-center hideerror fade-in"
+                class="error_alert text-center hide-error-form "
                 role="alert"
               >
                 <div class="d-flex align-center justify-content-center">
@@ -956,7 +955,7 @@
           const message = form.querySelector(".inputtext").value.trim();
           const jobTitle = selectTitle.textContent;
           const alert = document.querySelector(".alert");
-          const alerterror = document.querySelector(".alerterror");
+          const error_alert = document.querySelector(".error_alert");
 
           alert.style.display = "none";
 
@@ -995,7 +994,7 @@
           }
 
           const loadingbutton = document.querySelector(".spinner-border");
-          const notloadingbutton = document.querySelector(".spansend");
+          const notloadingbutton = document.querySelector(".btn-form-send");
           const notloadingicon = document.querySelector(".iconsend");
 
           loadingbutton.style.display = "block";
@@ -1009,7 +1008,7 @@
               if (response.ok) {
                 return response.json(); // Parse JSON if the response is OK
               } else {
-                alerterror.style.display = "block";
+                error_alert.style.display = "block";
               }
             })
             .then((data) => {
@@ -1024,10 +1023,10 @@
               unvalidjobtitle.style.display = "none";
               unvalidcv.style.display = "none";
               alert.style.display = "block";
-              alerterror.style.display = "none";
+              error_alert.style.display = "none";
             })
             .catch((error) => {
-              alerterror.style.display = "block";
+              error_alert.style.display = "block";
 
               notloadingbutton.classList.remove("d-none");
               notloadingicon.classList.remove("d-none");
