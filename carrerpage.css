@@ -16,6 +16,8 @@
 @font-face {
     font-family: 'Proxima Nova';
     src: url('./assets/fonts/proxima-nova/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: bold;
+
 }
 
 body {
