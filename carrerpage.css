@@ -312,7 +312,6 @@ textarea.form-control {
     position: fixed;
     width: 100%;
     background-color: #05172d;
-    padding: 1.5rem !important;
     z-index: 999;
     overflow-y: hidden;
     height: 90vh;
@@ -326,7 +325,7 @@ textarea.form-control {
 }
 
 .navbar-mobile .nav-link {
-    font-size: 2rem;
+    font-size: 4rem;
     color: rgba(255, 255, 255, 0.6) !important;
     font-weight: 600;
     line-height: 2.25rem;
@@ -1364,11 +1363,10 @@ address {
 
 
 
-navbar-mobile {
+.navbar-mobile {
     position: fixed;
     width: 100%;
     background-color: #05172d;
-    padding: 1.5rem !important;
     z-index: 999;
     overflow-y: auto;
 }
@@ -1379,10 +1377,10 @@ navbar-mobile {
 
 .navbar-mobile .nav-link {
     padding-left: 1.5rem;
-    font-size: 2rem;
+    font-size: 2.7rem;
     color: rgba(255, 255, 255, 0.6) !important;
     font-weight: 600;
-    line-height: 2.25rem;
+    line-height: 3rem;
 }
 
 .navbar-mobile .nav-link:hover,
