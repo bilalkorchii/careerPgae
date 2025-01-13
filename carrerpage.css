@@ -15,7 +15,7 @@
 }
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('./assets/fonts/proxima-nova/ProximaNova-Regular.ttf') format('truetype');
+    src: url('./assets/fonts/proxima-nova/Proxima\ Nova\ Font.otf') format('truetype');
     font-weight: bold;
 
 }
@@ -653,11 +653,128 @@ address {
 }
 
 .hr-alt {
+    opacity: 100%;
     border-width: 13px;
-    border-color: inherit;
+    border-color: white;
     width: 80px;
 }
 
 .ls-0, .ls-1, .ls-2 {
     letter-spacing: 2px;
 }
+
+
+.wave {
+    -webkit-animation-name: wave-animation;
+    animation-name: wave-animation;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-transform-origin: 70% 70%;
+    -ms-transform-origin: 70% 70%;
+    transform-origin: 70% 70%;
+    display: inline-block
+}
+
+@-webkit-keyframes wave-animation {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    10% {
+        -webkit-transform: rotate(14deg);
+        transform: rotate(14deg)
+    }
+
+    20% {
+        -webkit-transform: rotate(-8deg);
+        transform: rotate(-8deg)
+    }
+
+    30% {
+        -webkit-transform: rotate(14deg);
+        transform: rotate(14deg)
+    }
+
+    40% {
+        -webkit-transform: rotate(-4deg);
+        transform: rotate(-4deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg)
+    }
+
+    60% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    100% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+}
+
+@keyframes wave-animation {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    10% {
+        -webkit-transform: rotate(14deg);
+        transform: rotate(14deg)
+    }
+
+    20% {
+        -webkit-transform: rotate(-8deg);
+        transform: rotate(-8deg)
+    }
+
+    30% {
+        -webkit-transform: rotate(14deg);
+        transform: rotate(14deg)
+    }
+
+    40% {
+        -webkit-transform: rotate(-4deg);
+        transform: rotate(-4deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg)
+    }
+
+    60% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    100% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+}
+.animate__fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0)
+    }
+}
+
