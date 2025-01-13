@@ -531,13 +531,22 @@ textarea.form-control {
     }
 
     .titlecontainer {
+
         padding-inline: 20vh;
         margin-top: -10vw;
+
+
     }
 
+
+
+
+
+
+
     .navbar-expand-md {
+
         padding-top: 2vw;
-        padding-inline: 15vw;
     }
 
     .navbar-expand-md .navbar-nav .nav-link {
@@ -1466,7 +1475,7 @@ address {
 @media (min-width: 992px) {
     .navbar-expand-md {
         padding-top: 2vw;
-        padding-inline: 15vw;
+        padding-inline: 5vw;
     }
 
     .navbar-expand-md .navbar-nav .nav-link {
