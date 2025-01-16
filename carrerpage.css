@@ -335,7 +335,8 @@ textarea.form-control {
     font-size: 4rem;
     color: rgba(255, 255, 255, 0.6) !important;
     font-weight: 600;
-    line-height: 2.25rem;
+    margin-top: 10px;
+    line-height: 4rem;
     padding: 0px 0px;
 }
 
