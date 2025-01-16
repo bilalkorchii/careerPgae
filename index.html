@@ -25,7 +25,10 @@
         <nav class="navbar navbar-expand-md navbar-light container ">
             <a class="navbar-brand animate__fadeIn" href="#!" aria-label="Kreatinc Homepage">
                 <img src="./assets/svg-assets-homepage/logo-kreatinc-1.svg" height="36" width="159" alt="kreatinc logo" class="desktop-logo">
-            </a>
+           
+                <img src="./assets/svg-assets-careerpage/logo-white.svg" height="36" width="42" alt="kreatinc logo" class="navbar-mobile-display" hidden>
+
+              </a>
             <button class="navbar-toggler border-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <div class="navbar-icon">
                   <span></span>
@@ -735,7 +738,6 @@
             const collapse = document.querySelector(".navbar-collapse");
             const mobileElements = document.querySelectorAll(".navbar-mobile-display");
             
-            // Toggle mobile menu state
             collapse.addEventListener("show.bs.collapse", function() {
                 navbar.classList.add("navbar-mobile");
                 document.body.style.overflow = "hidden";
@@ -748,14 +750,12 @@
                 mobileElements.forEach(el => el.hidden = true);
             });
 
-            // Close mobile menu when clicking outside
             document.addEventListener("click", function(e) {
                 if (!navbar.contains(e.target) && collapse.classList.contains("show")) {
                     bootstrap.Collapse.getInstance(collapse).hide();
                 }
             });
 
-            // Close mobile menu when clicking nav links
             document.querySelectorAll(".nav-link").forEach(link => {
                 link.addEventListener("click", () => {
                     if (collapse.classList.contains("show")) {
