@@ -638,7 +638,7 @@
           loadingbutton.style.display = "block";
           notloadingbutton.classList.add("d-none");
           notloadingicon.classList.add("d-none");
-          fetch("http://localhost:3000/send-email", {
+          fetch("https://nodemail-necy.vercel.app/send-email/send-email", {
             method: "POST",
             body: formData,
           })
