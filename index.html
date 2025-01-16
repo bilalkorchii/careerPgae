@@ -19,6 +19,8 @@
     <meta property="og:url" content="https://www.kreatinc.com" />
 </head>
 <body>
+
+
 <header class="header-sm animate pb-5">
         <nav class="navbar navbar-expand-md navbar-light container ">
             <a class="navbar-brand animate__fadeIn" href="#!" aria-label="Kreatinc Homepage">
@@ -62,7 +64,6 @@
             </div>
         </nav>
     </header>
-
 
     <main >
 
@@ -147,6 +148,7 @@
                 <img class="mx-2 iconmore" src="./assets/svg-assets-careerpage/icon-more.svg" alt="Show more" />
             </div>
 
+            
             <div class="skills-collapsed py-6 numbered-list">
                 <div class="row py-5">
                     <div class="col-md-4 numbered-list-item">
@@ -265,6 +267,8 @@
                                 <textarea class="form-control inputtext" placeholder="Message"></textarea>
                             </div>
                             <div class="uploadContainer">
+                              <div class="spinner-border loadingfile" role="status"></div>
+
                                 <button type="button" class="upload-cv">
                                     <img class="img-fluid" src="./assets/svg-assets-careerpage/upload-icon.svg" alt="Upload CV" />
                                     Upload a CV
@@ -518,8 +522,12 @@
 
         const unvalidcv = document.querySelector(".unvalidcv");
         let file = "";
+        const loadingFile = document.querySelector(".loadingfile");
+   loadingFile.style.display='none'
         const uploadCvButton = document.querySelector(".upload-cv");
         uploadCvButton.addEventListener("click", () => {
+          loadingFile.style.display='block'
+          uploadCvButton.style.display='none'
           const input = document.createElement("input");
           input.type = "file";
           input.accept = ".pdf,.doc,.docx";
@@ -533,16 +541,37 @@
                   "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
             ) {
               if (file.size <= 5 * 1024 * 1024) {
-                // 5MB limit
                 uploadedFile = file;
+                uploadCvButton.style.display='block'
+
                 unvalidcv.style.display = "none";
+                uploadCvButton.textContent='Ready!'
+                loadingFile.style.display='none'
+
+
+
               } else {
                 unvalidcv.textContent = "File size must be less than 5MB.";
                 unvalidcv.style.display = "block";
+                uploadCvButton.style.display='block'
+
+                uplodedfile.style.display='none'
+                uploadCvButton.textContent='Upload a CV'
+                loadingFile.style.display='none'
+
+
+
               }
             } else {
               unvalidcv.textContent = "Only PDF and Word files are acceptable.";
               unvalidcv.style.display = "block";
+              uploadCvButton.style.display='block'
+
+              uplodedfile.style.display='none'
+              uploadCvButton.textContent='Upload a CV'
+              loadingFile.style.display='none'
+
+
             }
           });
           input.click();
@@ -631,14 +660,14 @@
             formData.append("cv", uploadedFile);
           }
 
-          const loadingbutton = document.querySelector(".spinner-border");
+          const loadingbutton = document.querySelector(".loading");
           const notloadingbutton = document.querySelector(".btn-form-send");
           const notloadingicon = document.querySelector(".iconsend");
 
           loadingbutton.style.display = "block";
           notloadingbutton.classList.add("d-none");
           notloadingicon.classList.add("d-none");
-          fetch("https://nodemail-necy.vercel.app/send-email/send-email", {
+          fetch("https://nodemail-necy.vercel.app/send-email", {
             method: "POST",
             body: formData,
           })
@@ -662,6 +691,8 @@
               unvalidcv.style.display = "none";
               alert.style.display = "block";
               error_alert.style.display = "none";
+              unvalidcaptcha.style.display='none';
+
             })
             .catch((error) => {
               error_alert.style.display = "block";
